@@ -14,6 +14,7 @@ gem 'autoprefixer-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
+gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
@@ -39,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'sprockets'
 gem 'sprockets-es6', require: 'sprockets/es6'
 gem 'bootsnap', '>= 1.1.7', require: false
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

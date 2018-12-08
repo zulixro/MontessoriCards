@@ -6,6 +6,16 @@ class CardsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "#{@card.name}",
+            :layout =>'pdf.html.erb',
+            :template => 'cards/pdf.html.erb',
+            :page_size => "A4",
+            :disposition => 'attachment'
+      end
+    end
   end
 
   def new

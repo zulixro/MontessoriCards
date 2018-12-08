@@ -3,11 +3,12 @@
     <h1>Karty Trójstopniowe</h1>
     <h2><%= @card.category.name.upcase %></h2>
     <h3><%= @card.name %></h3>
+    <%= link_to "Pobierz PDF", :action => "show", :format => :pdf, data: {turbolinks: false} %>
   </div>
   
   <div class="small-12 large-7 columns">
     <div class='card-image-container'>
-      <div clss='card-image'>
+      <div class='card-image'>
         <%= image_tag @card.url %>
       </div>
     </div>
