@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="small-12 large-5 columns">
+    <h1>Karty Trójstopniowe</h1>
+    <h2><%= @card.category.name.upcase %></h2>
+    <h3><%= @card.name %></h3>
+  </div>
+  
+  <div class="small-12 large-7 columns">
+    <div class='card-image-container'>
+      <div clss='card-image'>
+        <%= image_tag @card.url %>
+      </div>
+    </div>
+    <div class='card-name-container'>
+      <%= @card.name %>
+    </div>
+  </div>
+</div>
