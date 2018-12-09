@@ -1,9 +1,14 @@
 <div class="row">
   <div class="small-12 large-5 columns">
     <h1>Karty Trójstopniowe</h1>
-    <h2><%= @card.category.name.upcase %></h2>
+    <h2><%= @card.category.name %></h2>
     <h3><%= @card.name %></h3>
-    <%= link_to "Pobierz PDF", :action => "show", :format => :pdf, data: {turbolinks: false} %>
+    <div>
+      <%= link_to "Pobierz PDF", :action => "show", :format => :pdf, data: {turbolinks: false} %>
+    </div>
+    <div>
+      <%= link_to "Edytuj", :action => "edit" %>
+    </div>
   </div>
   
   <div class="small-12 large-7 columns">

@@ -1,2 +1,19 @@
-<h1>Cards#index</h1>
-<p>Find me in app/views/cards/index.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Karty Trójstopniowe</h1>
+  </div>
+</div>
+<div class="row">
+  <% @cards.each do |card| %>
+    <div class="small-12 medium-6 large-3 columns">
+      <%= link_to(card) do %>
+        <div class='card-image-container thumb'>
+          <%= image_tag card.url %>
+        </div>
+        <div class='card-name-container thumb'>
+          <%= card.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

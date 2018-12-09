@@ -1,17 +1,17 @@
-<div class="container">
-  <div class='card-image-container' style="background-image: url(<%= @card.url %>)">
+<div class="pdf-container">
+  <div class='pdf-card-image-container' style="background-image: url(<%= @card.url %>)">
   </div>
-  <div class='card-name-container'>
+  <div class='pdf-card-name-container'>
     <%= @card.name %>
   </div>
 </div>
 
 <div style='page-break-after:always;'></div>
 
-<div class="container">
-  <div class='card-image-container not-separate-image' style="background-image: url(<%= @card.url %>)">
+<div class="pdf-container">
+  <div class='pdf-card-image-container pdf-not-separate-image' style="background-image: url(<%= @card.url %>)">
   </div>
-  <div class='card-name-container not-separate-name'>
+  <div class='pdf-card-name-container pdf-not-separate-name'>
     <%= @card.name %>
   </div>
 </div>
