@@ -33,12 +33,13 @@ class CardsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map { |category| [category.name, category.id]}
   end
 
   def update
     if @card.update(card_params)
       flash[:notice] = "Your Montessori Card has been updated."
-      redirect_to card_path(card)
+      redirect_to card_path(@card)
     else
       flash[:error] = "Ups. Something went wrong.."
       render :edit
@@ -59,5 +60,9 @@ class CardsController < ApplicationController
 
   def get_card
     @card = Card.find(params[:id])
+  end
+
+  def card_params
+    params.permit(:name, :category_id, :url)
   end
 end
