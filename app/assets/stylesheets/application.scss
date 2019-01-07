@@ -16,6 +16,13 @@
 
  */
 
+ @font-face {
+  font-family: 'Century Gothic';
+  src:url('Century Gothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
  body {
  	padding: 3%;
  }
