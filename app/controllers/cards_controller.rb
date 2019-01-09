@@ -56,6 +56,11 @@ class CardsController < ApplicationController
     end
   end
 
+  def card_urls
+    card_urls = WikimediaConnector.new(params[:card_name]).get_urls
+    render json: { urls: card_urls }
+  end
+
   private
 
   def get_card
@@ -63,6 +68,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.permit(:name, :category_id, :url)
+    params.require(:card).permit(:name, :category_id, :url)
   end
 end

@@ -1,3 +1,14 @@
-Nazwa: <%= f.text_field :name %>
-Kategoria: <%= f.select :category_id, @categories %>
-<%= f.submit %>
+<div class="row">
+  <div class="small-12 medium-6 column">
+    Nazwa: <%= f.text_field :name, id: "card-name" %>
+    Kategoria: <%= f.select :category_id, @categories %>
+    <%= f.hidden_field :url, id: "card-url" %>
+    <%= f.submit %>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <div class='card-image-container'>
+      <%= image_tag @card.url, class: "card-image-tag" %>
+    </div>
+  </div>
+</div>

@@ -20,4 +20,27 @@
 
 $(document).on('turbolinks:load', function() {
     $(function(){ $(document).foundation(); });
+
+    var textInput = $('#card-name')[0];
+    var timeout = null;
+
+    textInput.onkeyup = function (e) {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(function () {
+            $.ajax({
+                type: "GET",
+                url: "/cards/card_urls",
+                data: { card_name: textInput.value },
+                success: function(data){
+                    var url = data.urls[0]
+                    $('#card-url').val(url);
+                    $('.card-image-tag').attr("src", url);
+                },
+                error: function(){
+                    console.log("ups");
+                }
+            })
+        }, 1000);
+    };
 });

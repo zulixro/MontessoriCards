@@ -1,8 +1,6 @@
 <div class="small-12 large-7 columns">
   <div class='card-image-container'>
-    <div class='card-image'>
-      <%= image_tag @card.url %>
-    </div>
+    <%= image_tag @card.url, class: "card-image-tag"%>
   </div>
   <div class='card-name-container'>
     <%= @card.name %>

@@ -17,6 +17,13 @@
     border-radius: 15px;
 }
 
+.card-image-tag {
+	width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
 .card-name-container {
 	width: 14cm;
 	font-family: Century Gothic, Helvetica, sans-serif;

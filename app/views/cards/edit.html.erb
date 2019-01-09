@@ -1,17 +1,5 @@
 <h1>Edytuj Kartę</h1>
 <br>
-<div class="row">
-  <div class="small-12 medium-6 column">
-    <%= form_for(@card) do |f| %>
-      <%= render 'form', f: f %>
-    <% end %>
-  </div>
-
-  <div class="small-12 medium-6 column">
-    <div class='card-image-container'>
-      <div class='card-image'>
-        <%= image_tag @card.url %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= form_for(@card) do |f| %>
+  <%= render 'form', f: f %>
+<% end %>
