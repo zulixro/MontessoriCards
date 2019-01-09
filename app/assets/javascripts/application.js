@@ -24,7 +24,7 @@ $(document).on('turbolinks:load', function() {
     var textInput = $('#card-name')[0];
     var timeout = null;
 
-    textInput.onkeyup = function (e) {
+    textInput.onkeyup = function(e) {
         clearTimeout(timeout);
 
         timeout = setTimeout(function () {
@@ -43,4 +43,15 @@ $(document).on('turbolinks:load', function() {
             })
         }, 1000);
     };
+
+    var btnPrevious = $('#btn-previous');
+    var btnNext = $('#btn-next');
+
+    btnPrevious.on("click", function() {
+        console.log("test");
+    });
+
+    btnNext.on("click", function() {
+        console.log("test2");
+    });
 });
