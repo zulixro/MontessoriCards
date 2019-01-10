@@ -3,7 +3,7 @@
     Nazwa: <%= f.text_field :name, id: "card-name" %>
     Kategoria: <%= f.select :category_id, @categories %>
     <%= f.hidden_field :url, id: "card-url" %>
-    <%= f.submit %>
+    <%= f.submit "Zapisz zmiany", class:"button expanded" %>
   </div>
 
   <div class="small-2 medium-1 column button-container">
@@ -12,7 +12,7 @@
 
   <div class="small-8 medium-6 column">
     <div class='card-image-container'>
-      <%= image_tag @card.url, class: "card-image-tag" %>
+      <%= image_tag @card.url, class:"card-image-tag" %>
     </div>
   </div>
 
