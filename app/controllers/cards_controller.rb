@@ -57,8 +57,12 @@ class CardsController < ApplicationController
   end
 
   def card_urls
-    card_urls = WikimediaConnector.new(params[:card_name]).get_urls
-    render json: { urls: card_urls }
+    begin
+      card_urls = WikimediaConnector.new(params[:card_name]).get_urls
+      render json: { urls: card_urls }
+    rescue Wikimedia::Error
+      render json: { error: "No image found" }, status: :unprocessable
+    end
   end
 
   private

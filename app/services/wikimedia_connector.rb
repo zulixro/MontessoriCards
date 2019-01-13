@@ -13,7 +13,7 @@ class WikimediaConnector
     begin
       JSON.parse(response)["query"]["pages"].values.map { |page| page["imageinfo"].first["url"] }
     rescue
-      raise "Brak wyników"
+      raise Wikimedia::NoImageError.new
     end
   end
 
