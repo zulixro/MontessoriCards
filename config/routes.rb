@@ -4,4 +4,5 @@ Rails.application.routes.draw do
       get 'card_urls'
     end
   end
+  resources :categories
 end

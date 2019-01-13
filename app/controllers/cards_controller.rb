@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :get_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cards = Card.all
+    @cards = params[:category_id] ? Card.where(category_id: params[:category_id]) : Cards.all
   end
 
   def show
