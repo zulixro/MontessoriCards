@@ -1,8 +1,9 @@
 class CardsController < ApplicationController
   before_action :get_card, only: [:show, :edit, :update, :destroy]
+  before_action :get_categories, only: [:new, :edit]
 
   def index
-    @cards = params[:category_id] ? Card.where(category_id: params[:category_id]) : Cards.all
+    @cards = params[:category_id] ? Card.where(category_id: params[:category_id]) : Card.all
   end
 
   def show
@@ -19,6 +20,7 @@ class CardsController < ApplicationController
   end
 
   def new
+    @card = Card.new
   end
 
   def create
@@ -33,7 +35,6 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @categories = Category.all.map { |category| [category.name, category.id]}
   end
 
   def update
@@ -73,5 +74,9 @@ class CardsController < ApplicationController
 
   def card_params
     params.require(:card).permit(:name, :category_id, :url)
+  end
+
+  def get_categories
+    @categories = Category.all.map { |category| [category.name, category.id]}
   end
 end

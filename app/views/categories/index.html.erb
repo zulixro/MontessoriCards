@@ -5,9 +5,22 @@
 </div>
 
 <div class="row">
-  <% @categories.each do |category| %>
-    <div class="small-12 medium-3 columns">
-      <%= link_to category.name, category_path(category) %>
+  <% if @categories.any? %>
+    <% @categories.each do |category| %>
+      <div class="small-12 medium-6 large-3 columns">
+        <%= link_to(category) do %>
+          <div class='card-image-container not-separate-image thumb'>
+            <%= image_tag category.cards.first.url %>
+          </div>
+          <div class='card-name-container not-separate-name thumb'>
+            <%= category.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="small-12 columns">
+      <h3>You don't have any cards sets yet. <%= link_to "Create your first set", new_category_path %>.</h3>
     </div>
   <% end %>
 </div>
