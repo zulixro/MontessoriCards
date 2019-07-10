@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    redirect_to cards_path({category_id: @category.id}) 
+    @cards = @category.cards
   end
 
   def new
@@ -22,9 +22,6 @@ class CategoriesController < ApplicationController
       flash[:error] = "Ups. Something went wrong.."
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
@@ -50,7 +47,7 @@ class CategoriesController < ApplicationController
   private
 
   def get_category
-    @category = Category.find(params[:id])
+    @category = Category.includes(:cards).find(params[:id])
   end
 
   def category_params

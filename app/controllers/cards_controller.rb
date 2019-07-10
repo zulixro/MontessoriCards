@@ -7,6 +7,7 @@ class CardsController < ApplicationController
   end
 
   def show
+    @category = @card.category
     respond_to do |format|
       format.html
       format.pdf do
@@ -32,9 +33,6 @@ class CardsController < ApplicationController
       flash[:error] = "Ups. Something went wrong.."
       render :new
     end
-  end
-
-  def edit
   end
 
   def update

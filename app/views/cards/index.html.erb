@@ -3,23 +3,4 @@
     <h1>Cards</h1>
   </div>
 </div>
-<div class="row">
-  <% if @cards.any? %>
-    <% @cards.each do |card| %>
-      <div class="small-12 medium-6 large-3 columns">
-        <%= link_to(card) do %>
-          <div class='card-image-container thumb'>
-            <%= image_tag card.url %>
-          </div>
-          <div class='card-name-container thumb'>
-            <%= card.name %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="small-12 columns">
-      <h3>You don't have any cards yet. <%= link_to "Create your first card", new_card_path %>.</h3>
-    </div>
-  <% end %>
-</div>
+<%= render 'cards' %>

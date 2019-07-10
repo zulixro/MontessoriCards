@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_15_201947) do
+ActiveRecord::Schema.define(version: 2019_01_26_105019) do
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
-    t.string "url", default: "/images/default_pic.jpg"
-    t.integer "category_id"
+    t.string "url", default: "default_pic.jpg"
+    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
